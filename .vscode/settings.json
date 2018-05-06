@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "types.h": "c",
+        "file_desc.h": "c"
+    }
+}

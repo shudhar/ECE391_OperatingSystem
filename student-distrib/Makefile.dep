@@ -1,0 +1,22 @@
+asmlink.o: asmlink.S asmlink.h
+boot.o: boot.S multiboot.h x86_desc.h types.h
+x86_desc.o: x86_desc.S x86_desc.h types.h
+fs.o: fs.c fs.h types.h file_desc.h lib.h keyboard.h sys.h
+i8259.o: i8259.c i8259.h types.h lib.h
+idt.o: idt.c x86_desc.h types.h idt.h keyboard.h file_desc.h sys.h rtc.h \
+  lib.h scheduling.h
+kernel.o: kernel.c multiboot.h types.h x86_desc.h lib.h debug.h tests.h \
+  idt.h i8259.h keyboard.h file_desc.h sys.h rtc.h paging.h fs.h \
+  scheduling.h
+keyboard.o: keyboard.c keyboard.h types.h file_desc.h sys.h lib.h i8259.h \
+  scheduling.h
+lib.o: lib.c lib.h types.h i8259.h
+paging.o: paging.c paging.h types.h file_desc.h
+pcb.o: pcb.c pcb.h fs.h types.h file_desc.h sys.h lib.h
+rtc.o: rtc.c rtc.h file_desc.h types.h lib.h i8259.h
+scheduling.o: scheduling.c scheduling.h types.h file_desc.h sys.h i8259.h \
+  x86_desc.h paging.h lib.h
+sys.o: sys.c sys.h types.h file_desc.h fs.h lib.h rtc.h paging.h pcb.h \
+  x86_desc.h keyboard.h
+tests.o: tests.c tests.h x86_desc.h types.h lib.h paging.h file_desc.h \
+  fs.h rtc.h keyboard.h sys.h
